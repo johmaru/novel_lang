@@ -23,9 +23,9 @@ fn processCommand(args: [][:0]u8) Error!void {
 pub fn errorfn(args: [][:0]u8) void {
     processCommand(args) catch |err| {
         switch (err) {
-            Error.UnknownCommand => std.debug.print("Unknown command{s}\n", .{args.ptr[1]}),
-            Error.UnknownError => std.debug.print("Unknown error\n", .{}),
-            Error.MissingArgument => std.debug.print("Missing argument\n", .{}),
+            Error.UnknownCommand => std.debug.print("不明なコマンド{s}\n", .{args.ptr[1]}),
+            Error.UnknownError => std.debug.print("不明なエラー\n", .{}),
+            Error.MissingArgument => std.debug.print("引数が見つかりません\n", .{}),
         }
     };
 }
